@@ -116,22 +116,22 @@ def compRate(AA, AT, AG, AC, TA, TT, TG, TC, GA, GT, GG, GC, CA, CT, CG, CC, tot
 	
 	comp_AA = comp_AT = comp_AG = comp_AC = comp_TA = comp_TT = comp_TG = comp_TC = comp_GA = comp_GT = comp_GG = comp_GC = comp_CA = comp_CT = comp_CG = comp_CC =  0
 	
-	comp_AA = Decil(all_AA) / total_all
-	comp_AT = round(float(all_AT) / total_all, 2)
-	comp_AG = round(float(all_AG) / total_all, 2)
-	comp_AC = round(float(all_AC) / total_all, 2)
-	comp_TA = round(float(all_TA) / total_all, 2)
-	comp_TT = round(float(all_TA) / total_all, 2)
-	comp_TG = round(float(all_TG) / total_all, 2)
-	comp_TC = round(float(all_TC) / total_all, 2)
-	comp_GA = round(float(all_GA) / total_all, 2)
-	comp_GT = round(float(all_GT) / total_all, 2)
-	comp_GG = round(float(all_GG) / total_all, 2)
-	comp_GC = round(float(all_GC) / total_all, 2)
-	comp_CA = round(float(all_CA) / total_all, 2)
-	comp_CT = round(float(all_CT) / total_all, 2)
-	comp_CG = round(float(all_CG) / total_all, 2)
-	comp_CC = round(float(all_CC) / total_all, 2)
+	comp_AA = Decimal(all_AA) / total_all
+	comp_AT = Decimal(all_AT) / total_all
+	comp_AG = Decimal(all_AG) / total_all
+	comp_AC = Decimal(all_AC) / total_all
+	comp_TA = Decimal(all_TA) / total_all
+	comp_TT = Decimal(all_TA) / total_all
+	comp_TG = Decimal(all_TG) / total_all
+	comp_TC = Decimal(all_TC) / total_all
+	comp_GA = Decimal(all_GA) / total_all
+	comp_GT = Decimal(all_GT) / total_all
+	comp_GG = Decimal(all_GG) / total_all
+	comp_GC = Decimal(all_GC) / total_all
+	comp_CA = Decimal(all_CA) / total_all
+	comp_CT = Decimal(all_CT) / total_all
+	comp_CG = Decimal(all_CG) / total_all
+	comp_CC = Decimal(all_CC) / total_all
 
 	return comp_AA, comp_AT, comp_AG, comp_AC, comp_TA, comp_TT, comp_TG, comp_TC, comp_GA, comp_GT, comp_GG, comp_GC, comp_CA, comp_CT, comp_CG, comp_CC
 
@@ -156,21 +156,21 @@ def calcTheorynum(comp_AA, comp_AT, comp_AG, comp_AC, comp_TA, comp_TT, comp_TG,
 	theory_CC = []
 	for i in xrange(len(total)):
 		num_AA = Decimal(comp_AA) * total[i]
-		num_AT = int(round(comp_AT * total[i], 0))
-		num_AG = int(round(comp_AG * total[i], 0))
-		num_AC = int(round(comp_AC * total[i], 0))
-		num_TA = int(round(comp_TA * total[i], 0))
-		num_TT = int(round(comp_TT * total[i], 0))
-		num_TG = int(round(comp_TG * total[i], 0))
-		num_TC = int(round(comp_TC * total[i], 0))
-		num_GA = int(round(comp_GA * total[i], 0))
-		num_GT = int(round(comp_GT * total[i], 0))
-		num_GG = int(round(comp_GG * total[i], 0))
-		num_GC = int(round(comp_GC * total[i], 0))
-		num_CA = int(round(comp_CA * total[i], 0))
-		num_CT = int(round(comp_CT * total[i], 0))
-		num_CG = int(round(comp_CG * total[i], 0))
-		num_CC = int(round(comp_CC * total[i], 0))
+		num_AT = Decimal(comp_AT) * total[i]
+		num_AG = Decimal(comp_AG) * total[i]
+		num_AC = Decimal(comp_AC) * total[i]
+		num_TA = Decimal(comp_TA) * total[i]
+		num_TT = Decimal(comp_TT) * total[i]
+		num_TG = Decimal(comp_TG) * total[i]
+		num_TC = Decimal(comp_TC) * total[i]
+		num_GA = Decimal(comp_GA) * total[i]
+		num_GT = Decimal(comp_GT) * total[i]
+		num_GG = Decimal(comp_GG) * total[i]
+		num_GC = Decimal(comp_GC) * total[i]
+		num_CA = Decimal(comp_CA) * total[i]
+		num_CT = Decimal(comp_CT) * total[i]
+		num_CG = Decimal(comp_CG) * total[i]
+		num_CC = Decimal(comp_CC) * total[i]
 		theory_AA.append(num_AA)
 		theory_AT.append(num_AT)
 		theory_AG.append(num_AG)
@@ -211,21 +211,21 @@ def kaiNum(AA, AT, AG, AC, TA, TT, TG, TC, GA, GT, GG, GC, CA, CT, CG, CC, theor
 	kai_CC = []
 	for i in xrange(len(AA)):
 		num_AA = round((Decimal(AA[i]) - theory_AA[i]) ** 2 / theory_AA[i], 4)
-		num_AT = round((float(AT[i]) - theory_AT[i]) * (AT[i] - theory_AT[i]) / theory_AT[i], 4)
-		num_AG = round((float(AG[i]) - theory_AG[i]) * (AG[i] - theory_AG[i]) / theory_AG[i], 4)
-		num_AC = round((float(AC[i]) - theory_AC[i]) * (AC[i] - theory_AC[i]) / theory_AC[i], 4)
-		num_TA = round((float(TA[i]) - theory_TA[i]) * (TA[i] - theory_TA[i]) / theory_TA[i], 4)
-		num_TT = round((float(TT[i]) - theory_TT[i]) * (TT[i] - theory_TT[i]) / theory_TT[i], 4)
-		num_TG = round((float(TG[i]) - theory_TG[i]) * (TG[i] - theory_TG[i]) / theory_TG[i], 4)
-		num_TC = round((float(TC[i]) - theory_TC[i]) * (TC[i] - theory_TC[i]) / theory_TC[i], 4)
-		num_GA = round((float(GA[i]) - theory_GA[i]) * (GA[i] - theory_GA[i]) / theory_GA[i], 4)
-		num_GT = round((float(GT[i]) - theory_GT[i]) * (GT[i] - theory_GT[i]) / theory_GT[i], 4)
-		num_GG = round((float(GG[i]) - theory_GG[i]) * (GG[i] - theory_GG[i]) / theory_GG[i], 4)
-		num_GC = round((float(GC[i]) - theory_GC[i]) * (GC[i] - theory_GC[i]) / theory_GC[i], 4)
-		num_CA = round((float(CA[i]) - theory_CA[i]) * (CA[i] - theory_CA[i]) / theory_CA[i], 4)
-		num_CT = round((float(CT[i]) - theory_CT[i]) * (CT[i] - theory_CT[i]) / theory_CT[i], 4)
-		num_CG = round((float(CG[i]) - theory_CG[i]) * (CG[i] - theory_CG[i]) / theory_CG[i], 4)
-		num_CC = round((float(CC[i]) - theory_CC[i]) * (CC[i] - theory_CC[i]) / theory_CC[i], 4)
+		num_AT = round((Decimal(AT[i]) - theory_AT[i]) ** 2 / theory_AT[i], 4)
+		num_AG = round((Decimal(AG[i]) - theory_AG[i]) ** 2 / theory_AG[i], 4)
+		num_AC = round((Decimal(AC[i]) - theory_AC[i]) ** 2 / theory_AC[i], 4)
+		num_TA = round((Decimal(TA[i]) - theory_TA[i]) ** 2 / theory_TA[i], 4)
+		num_TT = round((Decimal(TT[i]) - theory_TT[i]) ** 2 / theory_TT[i], 4)
+		num_TG = round((Decimal(TG[i]) - theory_TG[i]) ** 2 / theory_TG[i], 4)
+		num_TC = round((Decimal(TC[i]) - theory_TC[i]) ** 2 / theory_TC[i], 4)
+		num_GA = round((Decimal(GA[i]) - theory_GA[i]) ** 2 / theory_GA[i], 4)
+		num_GT = round((Decimal(GT[i]) - theory_GT[i]) ** 2 / theory_GT[i], 4)
+		num_GG = round((Decimal(GG[i]) - theory_GG[i]) ** 2 / theory_GG[i], 4)
+		num_GC = round((Decimal(GC[i]) - theory_GC[i]) ** 2 / theory_GC[i], 4)
+		num_CA = round((Decimal(CA[i]) - theory_CA[i]) ** 2 / theory_CA[i], 4)
+		num_CT = round((Decimal(CT[i]) - theory_CT[i]) ** 2 / theory_CT[i], 4)
+		num_CG = round((Decimal(CG[i]) - theory_CG[i]) ** 2 / theory_CG[i], 4)
+		num_CC = round((Decimal(CC[i]) - theory_CC[i]) ** 2 / theory_CC[i], 4)
 		kai_AA.append(num_AA)
 		kai_AT.append(num_AT)
 		kai_AG.append(num_AG)
